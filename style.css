@@ -1,173 +1,44 @@
-/* Base styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf6f0;
-  color: #333;
-}
-
-/* Header */
-header {
-  text-align: center;
-  background-color: #4CAF50;
-  color: white;
-  padding: 1.5rem;
-}
-
-.logo {
-  width: 80px;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin: 0.5rem 0;
-}
-
-header p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-/* Homepage section cards */
-main {
+/* Card container for layout control */
+.card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   padding: 2rem;
-}
-
-.section-card {
-  background-color: white;
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.section-card:hover {
-  transform: scale(1.03);
-  border-color: #388E3C;
-}
-
-.section-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.section-card h2 {
-  padding: 1rem;
-  font-size: 1.1rem;
-  color: #4CAF50;
-  background-color: #e8f5e9;
-  margin: 0;
-}
-
-.section-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-/* Product grid layout */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-/* Product cards */
-.product-card {
-  background-color: white;
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
-  border-color: #388E3C;
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.product-card h3 {
-  color: #4CAF50;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-.product-card p {
-  font-size: 0.9rem;
-  padding: 0 1rem;
-}
-
-/* Buy button */
-.buy-button {
-  display: inline-block;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.buy-button:hover {
-  background-color: #388E3C;
-}
-
-/* Contact Section */
-.contact {
-  background-color: #e8f5e9;
-  padding: 2rem;
-  text-align: center;
-  border-top: 2px solid #4CAF50;
-  margin-top: 2rem;
-}
-
-.contact h3 {
-  margin-bottom: 1rem;
-  color: #4CAF50;
-}
-
-/* Footer */
-footer {
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: 0;
 }
 
 /* Responsive layout */
 @media (max-width: 1024px) {
-  main,
+  .card-container,
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  main,
+  .card-container,
   .product-grid {
     grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .section-card h2 {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .contact {
+    padding: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
   }
 }
