@@ -32,14 +32,17 @@ header p {
   margin: 0;
 }
 
-/* Homepage section cards */
-main {
+.card-grid,
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* two cards per row */
   gap: 1.5rem;
   padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Section Card */
 .section-card {
   background-color: white;
   border: 2px solid #4CAF50;
@@ -57,8 +60,11 @@ main {
 
 .section-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background-color: #fff; /* Optional: adds a clean backdrop */
+  padding: 1rem; /* Optional: adds breathing room */
 }
 
 .section-card h2 {
@@ -73,64 +79,6 @@ main {
   text-decoration: none;
   color: inherit;
   display: block;
-}
-
-/* Product grid layout */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-/* Product cards */
-.product-card {
-  background-color: white;
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
-  border-color: #388E3C;
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.product-card h3 {
-  color: #4CAF50;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-.product-card p {
-  font-size: 0.9rem;
-  padding: 0 1rem;
-}
-
-/* Buy button */
-.buy-button {
-  display: inline-block;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.buy-button:hover {
-  background-color: #388E3C;
 }
 
 /* Contact Section */
@@ -159,15 +107,156 @@ footer {
 
 /* Responsive layout */
 @media (max-width: 1024px) {
-  main,
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid,
+  .product-grid {
+    grid-template-columns: 1fr; /* One card per row on mobile */
+    padding: 1rem;
+  }
+}
+  .section-card h2 {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .section-card img {
+    height: 160px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    padding: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+/* Generic Section Grid */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Product Card */
+.product-card {
+  background-color: white;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  border-color: #388E3C;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #4CAF50;
+  background-color: #e8f5e9;
+  margin: 0;
+}
+
+.product-card p,
+.product-card .buy-button {
+  display: none;
+  padding: 0 1rem;
+}
+
+.product-card.active p,
+.product-card.active .buy-button {
+  display: block;
+}
+
+.buy-button {
+  display: inline-block;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #388E3C;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  main,
   .product-grid {
     grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+    padding: 0.75rem;
   }
 }
+
