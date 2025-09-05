@@ -70,3 +70,14 @@
   </script>
 </body>
 </html>
+
+<script>
+  const productCards = document.querySelectorAll('.product-card');
+
+  productCards.forEach(card => {
+    card.addEventListener('click', () => {
+      productCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+</script>
