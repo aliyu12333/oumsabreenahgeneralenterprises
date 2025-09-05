@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Herbs & Spices Blend</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.jpg" alt="Business Logo" class="logo">
+    <h1>Herbs & Spices Blend</h1>
+    <p>Flavorful Herbal Blends for Cooking & Wellness</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
+  </div>
+
+  <main class="product-grid">
+
+    <div class="product-card">
+      <img src="images/sec7 1.jpg" alt="Signature Yaji">
+      <h3>Signature Yaji</h3>
+      <p>Signature Yaji is a spicy blend made from naturally dried peppers and selected spices. It adds heat, flavor, and aroma to meals — perfect for seasoning meats, rice, soups, and traditional dishes.</p>
+      <p><strong>Price:</strong> ₦2,500</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Signature%20Yaji" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 2.jpg" alt="Multipurpose Spice Mix">
+      <h3>Multipurpose Spice Mix</h3>
+      <p>Multipurpose Spice Blend is a carefully crafted mix of natural herbs and spices designed to enhance the flavor of a wide variety of dishes. Perfect for soups, stews, meats, vegetables, and snacks, this blend adds rich aroma and delicious taste to your cooking. It’s an all-in-one seasoning that brings convenience and authentic flavor to every meal.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Multipurpose%20Spice%20Mix" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 3.jpg" alt="Curry Masala Blend">
+      <h3>Curry Masala Blend</h3>
+      <p>Curry Masala Blend is a rich and aromatic mix of carefully selected spices that brings bold flavor, color, and aroma to your meals. Perfect for curries, stews, rice dishes, and grilled meats, it adds a delicious traditional taste and enhances the overall appeal of your cooking. Ideal for everyday use or special recipes.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Curry%20Masala%20Blend" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 4.jpg" alt="Exotic Jollof Blend">
+      <h3>Exotic Jollof Blend</h3>
+      <p>Exotic Jollof Blend is a flavorful and aromatic spice mix specially crafted to give your jollof rice that rich, smoky, and mouthwatering taste. Made from a blend of natural spices, herbs, and seasonings, it delivers authentic West African flavor. Perfect for rice, stews, and other savory dishes — a must-have for every kitchen!</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Exotic%20Jollof%20Blend" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 5.jpg" alt="Exotic Marinating Blend">
+      <h3>Exotic Marinating Blend</h3>
+      <p>Special Marinating Blend is a unique mix of herbs and spices designed to deeply infuse meats, chicken, and fish with rich flavor and aroma. Ideal for grilling, roasting, or frying, this blend helps tenderize and season your protein perfectly. It adds a delicious depth to your meals — making every bite juicy, tasty, and unforgettable.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Exotic%20Marinating%20Blend" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 6.jpg" alt="Tea Blend">
+      <h3>Tea Blend</h3>
+      <p>Tea Blend is a soothing mix of carefully selected natural herbs and spices, crafted to refresh the body, relax the mind, and support overall wellness. Perfect for daily sipping, it offers a comforting taste and gentle aroma — ideal for boosting immunity, aiding digestion, and calming stress.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Tea%20Blend" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="images/sec7 7.jpg" alt="Curry Powder">
+      <h3>Curry Powder</h3>
+      <p>Curry Powder is a flavorful blend of ground spices such as turmeric, coriander, cumin, and chili, designed to add rich taste, color, and aroma to your dishes. It’s perfect for curries, soups, stews, and rice meals — bringing a warm, spicy kick to every bite. A must-have for vibrant and delicious cooking.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2347040548871?text=I'm%20interested%20in%20Curry%20Powder" target="_blank" class="buy-button">Buy Now</a>
+    </div>
+
+  </main>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h3>Contact Us</h3>
+    <p><strong>Email:</strong> Oum.sabreenahgeneralenterprises1@gmail.com</p>
+    <p><strong>Phone/WhatsApp:</strong> +234 704 054 8871 / +234 808 053 2695</p>
+    <p><strong>Location:</strong> Off Doctor's House Bafarawa Estate, Sokoto, Nigeria</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 OUM SABREENAH GENERAL ENTERPRISES
+  </footer>
+
+  <script>
+    function filterProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        card.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
